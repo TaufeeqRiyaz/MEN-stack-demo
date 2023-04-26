@@ -2,6 +2,7 @@ var express		= require('express'),
 	mongoose	= require('mongoose'),
 	bodyParser	= require('body-parser'),
 	app		= express();
+    app.use(express.json());
 
 /********	APP SETUP	********/
 // Set port using environment variable PORT, otherwise 3000
@@ -39,6 +40,15 @@ app.get('/', function(req, res) {
 		res.send(err);
 	});
 });
+
+app.get('/test', (req, res) => {
+    const user = [{name: 'Taufeeq', age: 18}, {name: 'Rohit', age: 30}]
+  //  res.render('test');
+    if(user.length<0){  res.send('No user found');}
+  
+    else {   res.send(user);}
+ 
+})
 
 app.post('/add-entry', function(req, res) {
 	var entry = {
