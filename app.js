@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended:true }));
 
 /********	DB SETUP	********/
 // Set up mongoose
-mongoose.connect('mongodb://localhost/men_stack_example');
+mongoose.connect('mongodb+srv://taufeeqriyaz:CW4cTQEfRVldSO3a@cluster0.ckfgn0v.mongodb.net/?retryWrites=true&w=majority');
 mongoose.promise = Promise;
 
 // define model
